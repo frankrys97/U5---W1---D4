@@ -24,4 +24,14 @@ public abstract class ItemMenu {
         this.price = price;
         this.calories = calories;
     }
+
+    @Override
+    public String toString() {
+        return
+                "id=" + id +
+                        ", name='" + name + '\'' +
+                        ", price=" + price +
+                        ", calories=" + calories +
+                        '}';
+    }
 }

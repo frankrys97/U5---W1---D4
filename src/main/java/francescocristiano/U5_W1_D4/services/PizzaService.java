@@ -54,5 +54,9 @@ public class PizzaService {
         return pizzaRepository.count();
     }
 
+    public List<Pizza> findPizzaWithToppingName() {
+        return pizzaRepository.findPizzaWithToppingName("Salami");
+    }
+
 
 }

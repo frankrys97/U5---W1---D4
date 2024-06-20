@@ -1,19 +1,23 @@
 package francescocristiano.U5_W1_D4.configurations;
 
 import francescocristiano.U5_W1_D4.entities.Menu;
+import francescocristiano.U5_W1_D4.entities.Pizza;
 import francescocristiano.U5_W1_D4.services.DrinkService;
 import francescocristiano.U5_W1_D4.services.PizzaService;
 import francescocristiano.U5_W1_D4.services.ToppingService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Random;
 
 @Component
 @PropertySource("application.properties")
+@Transactional
 public class MyRunner implements CommandLineRunner {
 
     @Autowired
@@ -57,6 +61,9 @@ public class MyRunner implements CommandLineRunner {
 
         drinkService.saveAllDrinks(menu.getDrinks());*/
 
-        
+        List<Pizza> pizzeWithSalami = pizzaService.findPizzaWithToppingName();
+        pizzeWithSalami.forEach(System.out::println);
+
+
     }
 }
