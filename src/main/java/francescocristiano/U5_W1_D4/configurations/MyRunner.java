@@ -61,8 +61,8 @@ public class MyRunner implements CommandLineRunner {
 
         drinkService.saveAllDrinks(menu.getDrinks());*/
 
-        List<Pizza> pizzeWithSalami = pizzaService.findPizzaWithToppingName();
-        pizzeWithSalami.forEach(System.out::println);
+        List<Pizza> pizzasWithSalami = pizzaService.findPizzaWithSalami();
+        pizzasWithSalami.forEach(System.out::println);
 
 
     }
